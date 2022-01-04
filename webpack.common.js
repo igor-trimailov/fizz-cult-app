@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const CopyPlugin = require('copy-webpack-plugin')
 const dotenv = require('dotenv')
 const webpack = require('webpack')
 // when enabled will show graphcal analysis of the bundle after production build
@@ -77,7 +78,19 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebPackPlugin({
-      template: 'index.html',
+      template: 'public/index.html',
+    }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: "public",
+          globOptions: {
+            dot: true,
+            gitignore: true,
+            ignore: ["**/index.*"],
+          },
+        },
+      ],
     }),
     new webpack.DefinePlugin({
       'process.env': JSON.stringify(dotenv.config().parsed),
