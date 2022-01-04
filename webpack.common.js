@@ -2,8 +2,6 @@ const path = require('path')
 const HtmlWebPackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
-const dotenv = require('dotenv')
-const webpack = require('webpack')
 // when enabled will show graphcal analysis of the bundle after production build
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
@@ -92,16 +90,13 @@ module.exports = {
         },
       ],
     }),
-    new webpack.DefinePlugin({
-      'process.env': JSON.stringify(dotenv.config().parsed),
-    }),
     // new BundleAnalyzerPlugin(),
   ],
   output: {
     filename: '[name].[contenthash].js',
     chunkFilename: 'lazy.[name].[contenthash].js',
     path: path.join(__dirname, 'dist'),
-    publicPath: '/fizz-cult-app/',
+    publicPath: '/',
   },
   optimization: {
     moduleIds: 'deterministic',
