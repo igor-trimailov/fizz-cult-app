@@ -2,7 +2,7 @@ import { ActionTypes } from '../actions'
 import { register, authenticate, passwordReset } from '../actions/api'
 
 // after the action?
-export default (store) => (next) => (action) => {
+const thunk = (store) => (next) => (action) => {
   next(action)
   // const state = store.getState
   const dispatch = store.dispatch
@@ -22,3 +22,5 @@ export default (store) => (next) => (action) => {
     // console.log('Unrecognized action: ' + action.type)
   }
 }
+
+export default thunk;

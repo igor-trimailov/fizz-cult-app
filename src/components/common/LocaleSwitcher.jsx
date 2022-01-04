@@ -29,9 +29,15 @@ function LocaleSwitcher() {
               <div className="locale-switcher__locale-list">
                 {availableLanguages.map((language) => (
                   <div
+                    role="button"
+                    tabIndex={0}
                     className="locale-switcher__locale"
                     key={`locale-${language}`}
                     onClick={() => {
+                      document.body.click()
+                      changeLanguage(language)
+                    }}
+                    onKeyDown={() => {
                       document.body.click()
                       changeLanguage(language)
                     }}
@@ -55,14 +61,10 @@ function LocaleSwitcher() {
           </Popover>
         }
       >
-        {
-          <img
-            src={
-              process.env.PUBLIC_URL + `/images/flag/${selectedLanguage}.png`
-            }
-            alt={selectedLanguage}
-          />
-        }
+        <img
+          src={process.env.PUBLIC_URL + `/images/flag/${selectedLanguage}.png`}
+          alt={selectedLanguage}
+        />
       </OverlayTrigger>
     </div>
   )

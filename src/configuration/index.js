@@ -1,6 +1,6 @@
 import { BREAK_EXERCISE } from '../constants'
 
-export default {
+const config = {
   API_BASE_URL: 'http://localhost:5000/api/v1',
   defaultLocale: 'en_GB',
   locales: {
@@ -30,3 +30,5 @@ export default {
     type: BREAK_EXERCISE,
   },
 }
+
+export default config

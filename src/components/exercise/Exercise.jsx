@@ -71,11 +71,10 @@ export default function Exercise({ exercise, nextExercise, actions }) {
   }, [startExercise, exercise])
 
   const playCallback = useCallback(() => {
-    setPlay(play => !play)
+    setPlay((play) => !play)
   }, [])
 
   const goBack = () => {
-    // cancel()
     actions.finishExercise()
     history.push(`${process.env.PUBLIC_URL}/finished`)
   }
@@ -90,7 +89,13 @@ export default function Exercise({ exercise, nextExercise, actions }) {
     <div className="exercise">
       <div className="exercise__header">
         {exercise.name[selectedLanguage]}
-        <div className="exercise__header-icon" onClick={goBack}></div>
+        <div
+          role="button"
+          tabIndex={0}
+          className="exercise__header-icon"
+          onClick={goBack}
+          onKeyDown={goBack}
+        ></div>
       </div>
       <div className="exercise__body">
         <div className="exercise__image">
