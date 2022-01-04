@@ -1,0 +1,316 @@
+{
+  "routines": [
+    {
+      "id": 1,
+      "name": {
+        "en_GB": "RA routine",
+        "ru_RU": "Упражнения для РА"
+      },
+      "description": {
+        "en_GB": "Routine designed specifically for prople with rheumatoid arthritis, making sure there are no exercises that might put unnecessary pressure on the joints. Before starting these exercises, make sure to talk to your doctor",
+        "ru_RU": "Упражнения преднозначенные для людей с ревматоидным артритом, которые не оказывают ненужное давление на суставы. Прежде чем начать выполнение упражнений необходимо посоветоваться с врачом!"
+      },
+      "image": {
+        "src": "ra.png",
+        "alt": "RA routine"
+      },
+      "exercises": [
+        {
+          "id": 1,
+          "name": {
+            "en_GB": "Wrist Extension",
+            "ru_RU": "Разгибание запястий с гантелями"
+          },
+          "image": "wrist_extension.png",
+          "image_alt": "Wrist Extension",
+          "sound": "wrist_extension.mp3",
+          "duration": 30,
+          "order": 1
+        },
+        {
+          "id": 2,
+          "name": {
+            "en_GB": "Wrist Flexion",
+            "ru_RU": "Сгибание запястий с гантелями"
+          },
+          "image": "wrist_flexion.png",
+          "image_alt": "Wrist Flexion",
+          "sound": "wrist_flexion.mp3",
+          "duration": 30,
+          "order": 2
+        },
+        {
+          "id": 3,
+          "name": {
+            "en_GB": "Grip Squeeze (Right)",
+            "ru_RU": "Сжатие правого кулака"
+          },
+          "image": "grip_squeeze.png",
+          "image_alt": "Grip Squeeze",
+          "sound": "grip_squeeze.mp3",
+          "duration": 30,
+          "order": 3
+        },
+        {
+          "id": 4,
+          "name": {
+            "en_GB": "Grip Squeeze (Left)",
+            "ru_RU": "Сжатие левого кулака"
+          },
+          "image": "grip_squeeze.png",
+          "image_alt": "Grip Squeeze",
+          "sound": "grip_squeeze.mp3",
+          "duration": 30,
+          "order": 4
+        },
+        {
+          "id": 5,
+          "name": {
+            "en_GB": "Forearm Pronation and Supination (Left)",
+            "ru_RU": "Вращение левого запястья с гантелей"
+          },
+          "image": "forearm_pronation_and_supination.png",
+          "image_alt": "Forearm Pronation and Supination",
+          "sound": "forearm_pronation_and_supination.mp3",
+          "duration": 30,
+          "order": 5
+        },
+        {
+          "id": 6,
+          "name": {
+            "en_GB": "Forearm Pronation and Supination (Right)",
+            "ru_RU": "Вращение правого запястья с гантелей"
+          },
+          "image": "forearm_pronation_and_supination.png",
+          "image_alt": "Forearm Pronation and Supination",
+          "sound": "forearm_pronation_and_supination.mp3",
+          "duration": 30,
+          "order": 6
+        },
+        {
+          "id": 7,
+          "name": {
+            "en_GB": "Forward Lunge",
+            "ru_RU": "Выпад вперёд"
+          },
+          "image": "forward_lunge.png",
+          "image_alt": "Forward Lunge",
+          "sound": "forward_lunge.mp3",
+          "duration": 60,
+          "order": 7
+        },
+        {
+          "id": 8,
+          "name": {
+            "en_GB": "Achilles Stretch",
+            "ru_RU": "Растяжка Ахиллова сухожилия"
+          },
+          "image": "achilles_stretch.png",
+          "image_alt": "Achilles Stretch",
+          "sound": "achilles_stretch.mp3",
+          "duration": 60,
+          "order": 8
+        },
+        {
+          "id": 9,
+          "name": {
+            "en_GB": "Tiptoe Squats",
+            "ru_RU": "Приседания на носочках"
+          },
+          "image": "tiptoe_squats.png",
+          "image_alt": "Tiptoe Squats",
+          "sound": "tiptoe_squats.mp3",
+          "duration": 60,
+          "order": 9
+        },
+        {
+          "id": 10,
+          "name": {
+            "en_GB": "Side Lunge (Right)",
+            "ru_RU": "Боковой выпад вправо"
+          },
+          "image": "side_lunge.png",
+          "image_alt": "Side Lunge",
+          "sound": "side_lunge.mp3",
+          "duration": 30,
+          "order": 10
+        },
+        {
+          "id": 11,
+          "name": {
+            "en_GB": "Side Lunge (Left)",
+            "ru_RU": "Боковой выпад влево"
+          },
+          "image": "side_lunge.png",
+          "image_alt": "Side Lunge",
+          "sound": "side_lunge.mp3",
+          "duration": 30,
+          "order": 11
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": {
+        "en_GB": "Full body routine",
+        "ru_RU": "Упражнения для всего тела"
+      },
+      "description": {
+        "en_GB": "Full body exercise routine for your daily needs",
+        "ru_RU": "Эффективная зарядка для всего тела в домашних условиях"
+      },
+      "image": {
+        "src": "full_body.png",
+        "alt": "Full body routine"
+      },
+      "exercises": [
+        {
+          "id": 1,
+          "name": {
+            "en_GB": "Arm Circles (Forward)",
+            "ru_RU": "Круговые вращения рук вперёд"
+          },
+          "image": "arm_circles.png",
+          "image_alt": "Arm Circles",
+          "sound": "arm_circles.mp3",
+          "duration": 30,
+          "order": 1
+        },
+        {
+          "id": 2,
+          "name": {
+            "en_GB": "Arm Circles (Backwards)",
+            "ru_RU": "Круговые вращения рук назад"
+          },
+          "image": "arm_circles.png",
+          "image_alt": "Arm Circles",
+          "sound": "arm_circles.mp3",
+          "duration": 30,
+          "order": 2
+        },
+        {
+          "id": 3,
+          "name": {
+            "en_GB": "Star Toe Touch",
+            "ru_RU": "Упражнение Звездочка"
+          },
+          "image": "start_toe_touch.png",
+          "image_alt": "Start Toe Touch",
+          "sound": "start_toe_touch.mp3",
+          "duration": 30,
+          "order": 3
+        },
+        {
+          "id": 4,
+          "name": {
+            "en_GB": "High Knees",
+            "ru_RU": "Прыжки с высоко поднятыми коленями"
+          },
+          "image": "high_knees.png",
+          "image_alt": "High Knees",
+          "sound": "high_knees.mp3",
+          "duration": 30,
+          "order": 4
+        },
+        {
+          "id": 5,
+          "name": {
+            "en_GB": "Squats",
+            "ru_RU": "Приседания"
+          },
+          "image": "squats.png",
+          "image_alt": "Squats",
+          "sound": "squats.mp3",
+          "duration": 30,
+          "order": 5
+        },
+        {
+          "id": 6,
+          "name": {
+            "en_GB": "Hip Flexors",
+            "ru_RU": "Растяжка бедра"
+          },
+          "image": "hip_flexor.png",
+          "image_alt": "Hip Flexors",
+          "sound": "hip_flexor.mp3",
+          "duration": 30,
+          "order": 6
+        },
+        {
+          "id": 7,
+          "name": {
+            "en_GB": "Jumping Jacks",
+            "ru_RU": "Прыжки Джека"
+          },
+          "image": "jumping_jacks.png",
+          "image_alt": "Jumping Jacks",
+          "sound": "jumping_jacks.mp3",
+          "duration": 30,
+          "order": 7
+        },
+        {
+          "id": 8,
+          "name": {
+            "en_GB": "Hamstring Stretch (Right)",
+            "ru_RU": "Растяжка подколенных сухожилий (Паравой ноги)"
+          },
+          "image": "hamstring_stretch.png",
+          "image_alt": "Hamstring Stretch",
+          "sound": "hamstring_stretch.mp3",
+          "duration": 45,
+          "order": 8
+        },
+        {
+          "id": 9,
+          "name": {
+            "en_GB": "Hamstring Stretch (Left)",
+            "ru_RU": "Растяжка подколенных сухожилий (Левогой ноги)"
+          },
+          
+          "image": "hamstring_stretch.png",
+          "image_alt": "Hamstring Stretch",
+          "sound": "hamstring_stretch.mp3",
+          "duration": 45,
+          "order": 9
+        },
+        
+        {
+          "id": 10,
+          "name": {
+            "en_GB": "Squat Side Kick",
+            "ru_RU": "Приседания и подъём ноги в сторону"
+          },
+          "image": "squat_side_kick.png",
+          "image_alt": "Squat Side Kick",
+          "sound": "squat_side_kick.mp3",
+          "duration": 45,
+          "order": 10
+        },
+        {
+          "id": 11,
+          "name": {
+            "en_GB": "Plank",
+            "ru_RU": "Планка"
+          },
+          "image": "plank.png",
+          "image_alt": "Plank",
+          "sound": "plank.mp3",
+          "duration": 45,
+          "order": 11
+        },
+        {
+          "id": 12,
+          "name": {
+            "en_GB": "Bridge",
+            "ru_RU": "Мостик"
+          },
+          "image": "bridge.png",
+          "image_alt": "Bridge",
+          "sound": "bridge.mp3",
+          "duration": 45,
+          "order": 12
+        }
+      ]
+    }
+  ]
+}
