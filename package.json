@@ -55,7 +55,7 @@
   },
   "scripts": {
     "start": "SET NODE_ENV=development && webpack serve --config webpack.dev.js --progress --open",
-    "build": "webpack --config prod.config.js --progress",
+    "build": "webpack --config webpack.prod.js --progress",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
