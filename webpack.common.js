@@ -101,7 +101,7 @@ module.exports = {
     filename: '[name].[contenthash].js',
     chunkFilename: 'lazy.[name].[contenthash].js',
     path: path.join(__dirname, 'dist'),
-    publicPath: '/',
+    publicPath: '/fizz-cult-app/',
   },
   optimization: {
     moduleIds: 'deterministic',
