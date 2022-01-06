@@ -1,5 +1,10 @@
 import React from 'react'
 
+/**
+ * Some experimentation using Tailwind to convert styling from SASS
+ * https://tailwindcomponents.com/cheatsheet/
+ */
+
 function Jumbotron({ heading, text, image, children }) {
   return (
     <>
