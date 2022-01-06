@@ -10,8 +10,8 @@ import {
   useLocation,
 } from 'react-router-dom'
 
-import './scss/index.scss'
 import './index.css'
+import './scss/index.scss'
 import './i18next'
 import { Exercise, Exercises, Routines, Header, Modal } from './containers'
 import { ScrollToTop, Footer, Loader } from './components/common'
