@@ -11,6 +11,7 @@ import {
 } from 'react-router-dom'
 
 import './scss/index.scss'
+import './index.css'
 import './i18next'
 import { Exercise, Exercises, Routines, Header, Modal } from './containers'
 import { ScrollToTop, Footer, Loader } from './components/common'

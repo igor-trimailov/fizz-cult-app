@@ -6,6 +6,7 @@
     "plugin:react/recommended",
     "plugin:react-hooks/recommended", // react hooks
     "plugin:jsx-a11y/recommended", // accessibility checks
+    "plugin:tailwind/recommended",
     "prettier"
   ],
   "rules": {
