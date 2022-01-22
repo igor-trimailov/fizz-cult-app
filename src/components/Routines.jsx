@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { useTranslation } from 'react-i18next'
@@ -7,17 +8,21 @@ import Routine from './routine/Routine'
 import { Authenticated, Jumbotron } from './common'
 
 import { handleDragEnd } from '../utils'
+import { selectRoutines } from '../selectors'
+import { fetchRoutines, orderRoutines } from '../reducers/routines'
 
-function Routines({ actions, routines }) {
+function Routines() {
   const history = useHistory()
+  const dispatch = useDispatch()
+  const routines = useSelector(selectRoutines)
   const { t } = useTranslation()
 
   useEffect(() => {
-    actions.requestRoutinesData()
-  }, [actions])
+    dispatch(fetchRoutines())
+  }, [dispatch])
 
   const setRoutinesCallback = (routines) => {
-    actions.orderRoutines(routines)
+    dispatch(orderRoutines(routines))
   }
 
   const onRoutineClick = (routineId) => {

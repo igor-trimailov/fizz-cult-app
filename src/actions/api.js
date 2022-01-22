@@ -1,23 +1,6 @@
 import * as creators from './creators'
 import config from '../configuration'
 
-// TODO: load routines from an api call
-export const requestRoutinesData = () => async (dispatch) => {
-  dispatch(creators.requestRoutines())
-  await fetch(process.env.PUBLIC_URL + '/data.json')
-    .then((res) => res.json())
-    .then((data) => {
-      console.log('fetced data', data)
-      dispatch(creators.receiveRoutinesSuccess(data))
-    })
-    .catch((e) => {
-      console.warn('data fetch error', e)
-      dispatch(creators.receiveRoutinesError('Could not fetch data'))
-    })
-}
-
-// TODO: handle 401 and 403
-
 /**
  * Abstraction of restful api call. The default method is GET, that can be overriden by
  * passing different method in the options

@@ -1,8 +1,9 @@
 import React, { Suspense } from 'react'
 import ReactDOM from 'react-dom'
-import configureStore from './store'
+import store from './store'
 import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/integration/react'
+import { persistStore } from 'redux-persist'
 import {
   BrowserRouter as Router,
   Route,
@@ -13,11 +14,13 @@ import {
 import './index.css'
 import './scss/index.scss'
 import './i18next'
-import { Exercise, Exercises, Routines, Header, Modal } from './containers'
+import { Exercise, Header, Modal } from './containers'
+import Routines from './components/Routines'
+import Exercises from './components/Exercises'
 import { ScrollToTop, Footer, Loader } from './components/common'
 import ExerciseFinished from './components/exercise/ExerciseFinished'
 
-const { store, persistor } = configureStore()
+const persistor = persistStore(store)
 
 export default function RouterSwitch() {
   const location = useLocation()

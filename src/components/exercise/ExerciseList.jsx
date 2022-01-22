@@ -1,4 +1,4 @@
-import React, {useCallback} from 'react'
+import React, { useCallback } from 'react'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { ListGroup } from 'react-bootstrap'
 import { handleDragEnd } from '../../utils'
@@ -6,10 +6,12 @@ import { handleDragEnd } from '../../utils'
 import ExerciseListItem from './ExerciseListItem'
 
 function ExerciseList({ actions, routineId, exercises, onExerciseClick }) {
-
-  const setExercisesCallback = useCallback((exercises) => {
-    actions.orderExercises({ routineId, exercises })
-  }, [actions, routineId])
+  const setExercisesCallback = useCallback(
+    (exercises) => {
+      actions.orderExercises({ routineId, exercises })
+    },
+    [actions, routineId]
+  )
 
   const onDragEnd = (result) => {
     handleDragEnd(result, exercises, setExercisesCallback)
@@ -26,12 +28,12 @@ function ExerciseList({ actions, routineId, exercises, onExerciseClick }) {
           >
             {exercises.map((exercise, index) => (
               <ExerciseListItem
+                key={exercise.id}
                 {...{
                   actions,
                   exercise,
                   routineId,
                   index,
-                  key: exercise.id,
                   selectExercise: onExerciseClick,
                 }}
               />

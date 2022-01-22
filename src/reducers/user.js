@@ -1,19 +1,40 @@
-import { ActionTypes } from '../actions'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 
-const defaultUserState = {}
-function user(state = defaultUserState, action) {
-  switch (action.type) {
-    case ActionTypes.ACCOUNT_RECEIVE_LOGIN_SUCCESS:
-      return {
-        ...action.payload,
-      }
-
-    case ActionTypes.ACCOUNT_LOGOUT:
-      return defaultUserState
-
-    default:
-      return state
+export const userLogin = createAsyncThunk('user/userLogin', async (data) => {
+  const url = '/users/authenticate/'
+  const options = {
+    method: 'POST',
+    body: new URLSearchParams(data),
   }
-}
+  const response = await fetch(process.env.PUBLIC_URL + url, options)
+    .then((res) => res.json())
+    .then((data) => {
+      return data
+    })
+  return response
+})
 
-export default user
+const initialState = {}
+const userSlice = createSlice({
+  name: 'user',
+  initialState: initialState,
+  reducers: {
+    userLogout() {
+      return initialState
+    },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(userLogin.pending, (state) => {
+        state.status = 'loading'
+      })
+      .addCase(userLogin.fulfilled, (state, action) => {
+        state.status = 'succeeded'
+        state.user = action.payload
+      })
+  },
+})
+
+export const { userLogout } = userSlice.actions
+
+export default userSlice.reducer

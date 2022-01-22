@@ -1,31 +1,37 @@
-import { applyMiddleware, createStore } from 'redux'
-import thunkMiddleware from 'redux-thunk'
-import { composeWithDevTools } from 'redux-devtools-extension'
-import { persistStore, persistReducer } from 'redux-persist'
+import { configureStore } from '@reduxjs/toolkit'
+import {
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-
-// import loggerMiddleware from '../middleware/logger'
-import middleware from '../middleware'
 import rootReducer from '../reducers'
 
 // define what keys should be persisted using whitelist to not persist
 // store keys that are not that useful
 const persistConfig = {
   key: 'root',
-  whitelist: ['routines', 'exercises', 'user'],
+  version: 1,
+  whitelist: ['exercises', 'user'],
   storage,
 }
 
 const persistedReducer = persistReducer(persistConfig, rootReducer)
 
-export default function configureStore(initialState = {}) {
-  const middlewares = [middleware, thunkMiddleware]
-  const middlewareEnhancer = applyMiddleware(...middlewares)
+const store = configureStore({
+  reducer: persistedReducer,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        // ignore these actions to make persitor work correctly
+        // inogring all actions is not recommended
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
+})
 
-  const composedEnhancers = composeWithDevTools(middlewareEnhancer)
-
-  const store = createStore(persistedReducer, initialState, composedEnhancers)
-  const persistor = persistStore(store)
-
-  return { store, persistor }
-}
+export default store
